@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "s1Bkr2Bm8wo19HoFtWyFhJhWRDgTUVnNaqH9ifp92wnL5bv5ug3s5c3ZaB/DGLmVA9D8tSmMS3xmDOj5EWFkCw==",
+  "success": true,
+  "projectFilePath": "/home/nikolaj/Documents/Programmering/GithubProjects/kvidrer/server/server.csproj",
+  "expectedPackageFiles": [
+    "/home/nikolaj/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/npgsql/6.0.3/npgsql.6.0.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "/home/nikolaj/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
