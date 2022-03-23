@@ -1,8 +1,11 @@
 <script>
+	import Post from "./Post.svelte";
 	let inputTitle;
 	let inputText;
 	let loading = false;
 	const API_URL = "https://localhost:7160/";
+	let form;
+	let posts = [];
 
 	function submitForm() {
 		loading = true;
@@ -21,42 +24,59 @@
 			headers: {
 				"content-type": "application/json",
 			},
+		}).then(() => {
+			loading = false;
+			form.reset();
+			getPosts();
 		});
 	}
+
+	function getPosts() {
+		fetch(API_URL + "posts")
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				posts = res;
+			});
+	}
+
+	getPosts();
 </script>
 
-<main>
-	<h1 class="title has-text-centered mt-5 is-1">Kvidrer 🐦</h1>
+<h1 class="title has-text-centered mt-5 is-1">Kvidrer 🐦</h1>
 
-	<form action="" class="my-form is-expanded">
-		<div class="field">
-			<label class="label" for="name">Name</label>
-			<input
-				class="input"
-				type="text"
-				name="name"
-				id="name"
-				bind:value={inputTitle}
-			/>
-		</div>
-		<div class="field">
-			<label class="label" for="content">Content</label>
-			<textarea
-				class="textarea"
-				name="content"
-				id="content"
-				bind:value={inputText}
-			/>
-		</div>
-		<div class="field">
-			<button
-				class="button is-primary"
-				on:click|preventDefault={submitForm}
-				class:is-loading={loading}>Kvidr 🐦</button
-			>
-		</div>
-	</form>
-</main>
+<form action="" class="my-form is-expanded" bind:this={form}>
+	<div class="field">
+		<label class="label" for="name">Name</label>
+		<input
+			class="input"
+			type="text"
+			name="name"
+			id="name"
+			bind:value={inputTitle}
+		/>
+	</div>
+	<div class="field">
+		<label class="label" for="content">Content</label>
+		<textarea
+			class="textarea"
+			name="content"
+			id="content"
+			bind:value={inputText}
+		/>
+	</div>
+	<div class="field">
+		<button
+			class="button is-primary is-medium"
+			on:click|preventDefault={submitForm}
+			class:is-loading={loading}>Kvidr 🐦</button
+		>
+	</div>
+</form>
+
+{#each posts as item, i}
+	<Post {...item} />
+{/each}
 
 <style>
 	.my-form {
