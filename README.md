@@ -4,10 +4,9 @@ kvidrer er et forsøg på at lave https://youtu.be/JnEH9tYLxLk med dotnet og sve
 lav database
 ```sql
 CREATE TABLE data (
-    Id serial,
-    Timestamp timestamp ,
-    Name varchar(255) NOT NULL,
-    Content text,
-    PRIMARY KEY (id)
+	Id serial PRIMARY KEY,
+	Timestamp bigint,
+	Name varchar(255),
+	Content text
 );
 ```
