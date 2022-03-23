@@ -1,22 +1,19 @@
 <script>
-	import Post from "./Post.svelte";
+	import Post from "../lib/post.svelte";
 	let inputTitle;
 	let inputText;
 	let loading = false;
 	const API_URL = "https://localhost:7160/";
 	let form;
 	let posts = [];
-
 	function submitForm() {
 		loading = true;
 		console.log(inputTitle);
 		console.log(inputText);
-
 		const payload = {
 			Name: inputTitle,
 			Content: inputText,
 		};
-
 		fetch(API_URL, {
 			method: "POST",
 			mode: "cors",
@@ -30,7 +27,6 @@
 			getPosts();
 		});
 	}
-
 	function getPosts() {
 		fetch(API_URL + "posts")
 			.then((res) => res.json())
@@ -39,7 +35,6 @@
 				posts = res;
 			});
 	}
-
 	getPosts();
 </script>
 
