@@ -19,11 +19,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseForwardedHeaders();
 app.UseHttpLogging();
 app.UseCors();
 
-app.MapGet("/", () => "Hello");
-app.MapGet("/posts", async () =>
+app.MapGet("/", async () =>
 {
     // Retrieve all rows
     await using var cmd = new NpgsqlCommand("SELECT * FROM data ORDER BY Id DESC", conn);

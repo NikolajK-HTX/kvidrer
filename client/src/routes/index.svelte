@@ -3,7 +3,7 @@
 	let inputTitle;
 	let inputText;
 	let loading = false;
-	const API_URL = "https://localhost:7160/";
+	const API_URL = "http://jehaj.dk/kvidrer/api/";
 	let form;
 	let posts = [];
 	function submitForm() {
@@ -28,7 +28,7 @@
 		});
 	}
 	function getPosts() {
-		fetch(API_URL + "posts")
+		fetch(API_URL)
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);
